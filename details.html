@@ -1,0 +1,68 @@
+<!doctype html>
+<html>
+<head>
+	<title>Details</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<header>
+		Domus Rationem
+		<button class="uninstalled">install</button>
+	</header>
+	<section class="user">
+		Hi <select id="select-user">
+				<option value="Alice">Alice</option>
+				<option value="Mounir">Mounir</option>
+			</select>
+	</section>
+	<section class="table">
+		<table>
+			<thead>
+				<tr>
+					<th>Date</th>
+					<th>Sum</th>
+					<th>Label</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr id="item-1">
+					<td>23/01</td>
+					<td>32.50</td>
+					<td>Food</td>
+					<td><button class="edit">Edit</button></td>
+				</tr>
+				<tr id="item-2">
+					<td>27/01</td>
+					<td>7.98</td>
+					<td></td>
+					<td><button class="edit">Edit</button></td>
+				</tr>
+			</tbody>
+		</table>
+		<button>prev</button>
+		<a href="home.html">Home</a>
+		<button>next</button>
+	</section>
+	<section class="entry">
+		Edit Entry
+		<form>
+			<input type="hidden" name="item-id" value="">
+			<div>
+				<label for="item-label">Label:</label>
+				<input type="text" name="item-label" id="item-label" value="" placeholder="What did you buy?"/>
+			</div>
+			<div>
+				<label for="amount">Amount:</label>
+				<input type="number" name="amount" id="amount" value="" placeholder="How much?"/>
+			</div>		
+			<div>
+				<button id="cancel">Cancel</button>
+				<button id="submit">Submit</button>
+				<button id="add">Add</button>
+				<button id="delete">Delete</button>
+			</div>
+		</form>
+	</section>
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

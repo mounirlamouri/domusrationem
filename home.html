@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+	<title>Home</title>
+	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
+</head>
+<body>
+	<header>
+		Domus Rationem
+		<button class="uninstalled">install</button>
+	</header>
+	<section class="user">
+		Hi <select id="select-user">
+				<option value="Alice">Alice</option>
+				<option value="Mounir">Mounir</option>
+			</select>
+	</section>
+	<section>
+		Your home account balance is
+		<div class="balance positive"> &pound; 65.20</div>
+		<a href="details.html">see details</a>
+	</section>
+	<section class="entry">
+		New Entry
+		<form>
+			<div>
+				<label for="item-label">Label:</label>
+				<input type="text" name="item-label" id="item-label" value="" placeholder="What did you buy?"/>
+			</div>
+			<div>
+				<label for="amount">Amount:</label>
+				<input type="number" name="amount" id="amount" value="" placeholder="How much?"/>
+			</div>		
+			<div>
+				<button id="cancel">Cancel</button>
+				<button id="add">Add</button>
+			</div>
+		</form>
+	</section>
+	<script src="script.js" type="text/javascript" charset="utf-8"></script>
+</body>
+</html>

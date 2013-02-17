@@ -1,0 +1,53 @@
+body {
+	margin: 0;
+	text-align: center;
+	font: 16px;
+	position: relative;
+}
+header {
+	background: black;
+	color: white;
+	font: 1.5em bold;
+	height: 40px;
+}
+section	{
+	margin: 20px 0;
+}
+.balance {
+	font-size: 3em;
+}
+.balance.positive {
+	color: green;
+}
+.balance.positive::before {
+	content: "+";
+}
+.balance.negative {
+	color: red;
+}
+.balance.negative::before {
+	content: "-";
+}
+
+.table table {
+	margin: 15px auto;
+}
+
+.entry {
+	position: fixed;
+	bottom: 0;
+	width: 100%;
+	padding: 0 20px;
+	-moz-box-sizing: border-box;
+}
+.entry form {
+	
+	padding: 15px;
+	margin-top: -10px;
+	border: dashed 1px gray;
+}
+.entry label {
+	text-align: left;
+	width: 3.5em;
+	display: inline-block;
+}
