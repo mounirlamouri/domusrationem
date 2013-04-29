@@ -4,8 +4,11 @@
 	<title>Details</title>
 	<link rel="stylesheet" href="style.css" type="text/css" media="screen" title="no title" charset="utf-8">
 	<script type='text/javascript' src='https://cdn.firebase.com/v0/firebase.js'></script>
+  <script type='text/javascript' src='https://cdn.firebase.com/v0/firebase-auth-client.js'></script>
+</script>
 </head>
 <body>
+	<button onclick="authClient.login('password', { email: 'foo@bar.com', password: 'test'});">login</button>
 	<header>
 		Domus Rationem
 		<button class="uninstalled">install</button>

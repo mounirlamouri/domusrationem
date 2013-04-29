@@ -100,3 +100,19 @@ try {
 }
 
 init();
+
+var authClient = new FirebaseAuthClient(new Firebase('https://domusrationem.firebaseio.com'), function(error, user) {
+  if (error) {
+    // an error occurred while attempting login
+    console.log(error);
+  } else if (user) {
+    // user authenticated with Firebase
+    console.log('User ID: ' + user.id + ', Provider: ' + user.provider);
+  }
+});
+
+authClient.createUser('foo@bar.com', 'test', function(error, user) {
+  if (!error) {
+    console.log('User Id: ' + user.id + ', Email: ' + user.email);
+  }
+});
