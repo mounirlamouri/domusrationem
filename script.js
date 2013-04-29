@@ -75,28 +75,19 @@ function deleteEntry(ev) {
 	displayList(list);
 }
 
-function displayList(list) {
-	var tbody = document.getElementsByTagName('tbody')[0];
-	if (!tbody) {
-		return;
-	}
-	var tr;
-	tbody.innerHTML = '';
-	for (var i = 0; i < list.length; i++) {
-		tr = document.createElement('tr');
+function init() {
+  var listRef = new Firebase('https://domusrationem.firebaseio.com/message_list');
+  listRef.on('child_added', function(data) {
+  	var i = list.length;
+  	var entry = new Entry(data.val().amount, data.val().label);
+	  list.push(entry);
+
+		var tbody = document.getElementsByTagName('tbody')[0];
+  	var tr = document.createElement('tr');
 		tr.id = 'item-' + i;
 		tr.innerHTML = '<td>' + list[i].displayDate() + '</td><td>' + list[i].displayPrice() + '</td><td>' + list[i].label + '</td><td><button class="edit">Edit</button></td>';
 		tbody.appendChild(tr);
-	};
-
-	var editButtons = document.getElementsByClassName('edit');
-	for (var i = 0; i < editButtons.length; i++) {
-		editButtons[i].addEventListener('click', editEntry);
-	};
-}
-
-function getFromServer() {
-	var url = 'http://oldworld.fr:5984/domusrationem/mounir';
+  });
 }
 
 try {
@@ -108,5 +99,4 @@ try {
 	console.log(e);
 }
 
-displayList(list);
-
+init();
