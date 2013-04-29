@@ -31,7 +31,10 @@ function addEntry(ev) {
 	var form = document.getElementsByTagName('form')[0];
 	var e = new Entry(form.elements["amount"].value, form.elements["item-label"].value);
 	list.push(e);
-	// save the fucking list
+
+	var listRef = new Firebase('https://domusrationem.firebaseio.com/message_list');
+	listRef.push(e);
+
 	displayList(list);
 	console.log(list);
 }
