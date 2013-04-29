@@ -45,7 +45,7 @@ function cancelEntry(ev) {
 	form.elements["amount"].value = '';
 }
 
-function submitEntry(ev) {
+function modifyEntry(ev) {
 	ev.preventDefault();
 	ev.stopPropagation();
 	var form = document.getElementsByTagName('form')[0];
@@ -78,7 +78,7 @@ function displayList(list) {
 		return;
 	}
 	var tr;
-	tbody.innerHTML = ''; 
+	tbody.innerHTML = '';
 	for (var i = 0; i < list.length; i++) {
 		tr = document.createElement('tr');
 		tr.id = 'item-' + i;
@@ -99,7 +99,7 @@ function getFromServer() {
 try {
 	document.getElementById('add').addEventListener('click', addEntry);
 	document.getElementById('cancel').addEventListener('click', cancelEntry);
-	document.getElementById('submit').addEventListener('click', submitEntry);
+	document.getElementById('modify').addEventListener('click', modifyEntry);
 	document.getElementById('delete').addEventListener('click', deleteEntry);
 } catch (e) {
 	console.log(e);
